@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,6 +42,7 @@ public class SuperHeroAdapter extends RecyclerView.Adapter<SuperHeroAdapter.MyVi
         SuperHero hero = heroList.get(position);
         //set text heroName berdasarkan data dari model hero
         holder.heroName.setText(hero.getHeroName());
+        holder.heroImage.setImageResource(hero.getImage());
     }
 
     @Override
@@ -56,11 +58,13 @@ public class SuperHeroAdapter extends RecyclerView.Adapter<SuperHeroAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView heroName;
+        public ImageView heroImage;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             //variabel disesuaikan dengan layout, karena pada layout item_super_hero terdapat satu
             //TextView maka pada kode program ini dibuat satu TextView yang melakukan findViewById ke id layout yang bersesuaian
             heroName = itemView.findViewById(R.id.heroName);
+            heroImage = itemView.findViewById(R.id.heroImage);
         }
     }
 }
