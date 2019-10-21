@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         SuperHero hero = new SuperHero("Blogspot", R.mipmap.ic_blogspot_foreground);
         //menambahkan hero ke listSuperHero
         listSuperHero.add(hero);
-        //membuat object hero baru
+        //membuat object hero baru~
         hero = new SuperHero("Dropbox", R.mipmap.ic_dropbox_foreground);
         //menambahkan hero baru ke listSuperhero
         listSuperHero.add(hero);
@@ -40,6 +40,6 @@ public class MainActivity extends AppCompatActivity {
         //Instansiasi Adapter
         SuperHeroAdapter superHeroAdapter = new SuperHeroAdapter(listSuperHero);
         rvSuperHero.setAdapter(superHeroAdapter);
-        rvSuperHero.setLayoutManager(new LinearLayoutManager(this));
+        rvSuperHero.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     }
 }
